@@ -20,8 +20,8 @@ class SSN_Math_Add_INT:
     def INPUT_TYPES(cls):
         return {
                     "required": {
-                        "var1": ("INT", {"default": 0}),
-                        "var2": ("INT", {"default": 0})
+                        "var1": ("INT", {"default": 0, "min": -0xffffffffffffffff, "max": 0xffffffffffffffff}),
+                        "var2": ("INT", {"default": 0, "min": -0xffffffffffffffff, "max": 0xffffffffffffffff})
                     }
                 }
 
