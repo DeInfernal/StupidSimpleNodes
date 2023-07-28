@@ -1,3 +1,5 @@
+import comfy.samplers
+
 class SSN_Seed_INT:
     @classmethod
     def INPUT_TYPES(cls):
@@ -67,9 +69,45 @@ class SSN_Math_Add_INT:
     def add(self, var1, var2):
         return (int(var1)+int(var2), )
 
+class SSN_SAMPLER:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+                    "required": {
+                        "sampler": (comfy.samplers.KSampler.SAMPLERS, ),
+                    }
+                }
+
+    RETURN_TYPES = (comfy.samplers.KSampler.SAMPLERS,)
+    FUNCTION = "func"
+
+    CATEGORY = "StupidSimpleNodes"
+
+    def func(self, sampler):
+        return (sampler, )
+
+class SSN_SCHEDULER:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+                    "required": {
+                        "scheduler": (comfy.samplers.KSampler.SCHEDULERS, ),
+                    }
+                }
+
+    RETURN_TYPES = (comfy.samplers.KSampler.SCHEDULERS,)
+    FUNCTION = "func"
+
+    CATEGORY = "StupidSimpleNodes"
+
+    def func(self, scheduler):
+        return (scheduler, )
+
 NODE_CLASS_MAPPINGS = {
     "Stupid Simple Seed (INT)": SSN_Seed_INT,
     "Stupid Simple Addition (INT)": SSN_Math_Add_INT,
     "Stupid Simple Number (INT)": SSN_INT_INT,
-    "Stupid Simple Number (FLOAT)": SSN_FLOAT_FLOAT
+    "Stupid Simple Number (FLOAT)": SSN_FLOAT_FLOAT,
+    "Stupid Simple Sampler": SSN_SAMPLER,
+    "Stupid Simple Scheduler": SSN_SCHEDULER
 }    
