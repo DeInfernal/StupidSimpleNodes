@@ -15,6 +15,25 @@ class SSN_Seed_INT:
     def seed(self, seed):
         return (int(seed), )
 
+class SSN_Math_Add_INT:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+                    "required": {
+                        "var1": ("INT", {"default": 0}),
+                        "var2": ("INT", {"default": 0})
+                    }
+                }
+
+    RETURN_TYPES = ("INT",)
+    FUNCTION = "add"
+
+    CATEGORY = "StupidSimpleNodes"
+
+    def add(self, var1, var2):
+        return (int(var1)+int(var2), )
+
 NODE_CLASS_MAPPINGS = {
     "Stupid Simple Seed (INT)": SSN_Seed_INT,
+    "Stupid Simple Addition (INT)": SSN_Math_Add_INT
 }    
