@@ -22,7 +22,7 @@ class SSN_INT_INT:
     def INPUT_TYPES(cls):
         return {
                     "required": {
-                        "INTEGER": ("INT", {"default": 0, "min": -0xffffffffffffffff, "max": 0xffffffffffffffff})
+                        "integer": ("INT", {"default": 0, "min": -0xffffffffffffffff, "max": 0xffffffffffffffff})
                     }
                 }
 
@@ -39,7 +39,7 @@ class SSN_FLOAT_FLOAT:
     def INPUT_TYPES(cls):
         return {
                     "required": {
-                        "FLOATNUM": ("FLOAT", {"default": 0, "min": -0xffffffffffffffff, "max": 0xffffffffffffffff})
+                        "floatnum": ("FLOAT", {"default": 0, "min": -0xffffffffffffffff, "max": 0xffffffffffffffff})
                     }
                 }
 
