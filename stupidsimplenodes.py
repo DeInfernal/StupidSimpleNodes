@@ -74,11 +74,12 @@ class SSN_SAMPLER:
     def INPUT_TYPES(cls):
         return {
                     "required": {
-                        "sampler": (comfy.samplers.KSampler.SAMPLERS, ),
+                        "sampler": (comfy.samplers.KSampler.SAMPLERS,),
                     }
                 }
 
     RETURN_TYPES = (comfy.samplers.KSampler.SAMPLERS,)
+    RETURN_NAMES = ("COMBO_SAMPLERS",)
     FUNCTION = "func"
 
     CATEGORY = "StupidSimpleNodes"
@@ -91,11 +92,12 @@ class SSN_SCHEDULER:
     def INPUT_TYPES(cls):
         return {
                     "required": {
-                        "scheduler": (comfy.samplers.KSampler.SCHEDULERS, ),
+                        "scheduler": (comfy.samplers.KSampler.SCHEDULERS,),
                     }
                 }
 
     RETURN_TYPES = (comfy.samplers.KSampler.SCHEDULERS,)
+    RETURN_NAMES = ("COMBO_SCHEDULERS",)
     FUNCTION = "func"
 
     CATEGORY = "StupidSimpleNodes"
